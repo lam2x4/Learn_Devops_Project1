@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API-Learn-Devops")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2736282867ef638a3f94a42d91e168ed0744cfda")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+037b0c8a63270ee4c18c92d263a8b57a2308a1d2")]
 [assembly: System.Reflection.AssemblyProductAttribute("API-Learn-Devops")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API-Learn-Devops")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

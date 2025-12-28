@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj": {}
+    "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj": {}
   },
   "projects": {
-    "E:\\C#-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj": {
+    "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj",
+        "projectUniqueName": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj",
         "projectName": "API-Learn-Devops",
-        "projectPath": "E:\\C#-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj",
+        "projectPath": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj",
         "packagesPath": "C:\\Users\\tnn34\\.nuget\\packages\\",
-        "outputPath": "E:\\C#-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\obj\\",
+        "outputPath": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
