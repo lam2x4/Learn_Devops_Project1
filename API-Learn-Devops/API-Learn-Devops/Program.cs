@@ -43,7 +43,7 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = services.GetRequiredService<ApplicationDbContext>();
-        // context.Database.Migrate(); // Optional: Automatically apply migrations
+        context.Database.Migrate(); // Automatically apply migrations
         DbInitializer.Initialize(context);
     }
     catch (Exception ex)
@@ -59,7 +59,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+var disableHttps = builder.Configuration.GetValue<bool>("DisableHttpsRedirection")
+                    || string.Equals(Environment.GetEnvironmentVariable("DISABLE_HTTPS_REDIRECTION"), "true", StringComparison.OrdinalIgnoreCase);
+if (!disableHttps)
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseCors("AllowReactApp");
 

@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -34,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Dockerfile",
+              "RelativeDocumentMoniker": "API-Learn-Devops\\Dockerfile",
+              "ToolTip": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Dockerfile",
+              "RelativeToolTip": "API-Learn-Devops\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-28T11:03:05.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "API-Learn-Devops\\Properties\\launchSettings.json",
@@ -51,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "README.md",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\README.md",
               "RelativeDocumentMoniker": "API-Learn-Devops\\README.md",
@@ -63,20 +80,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Program.cs",
               "RelativeDocumentMoniker": "API-Learn-Devops\\Program.cs",
               "ToolTip": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Program.cs",
               "RelativeToolTip": "API-Learn-Devops\\Program.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADUAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-28T05:47:54.595Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\appsettings.json",
               "RelativeDocumentMoniker": "API-Learn-Devops\\appsettings.json",
@@ -84,11 +101,12 @@
               "RelativeToolTip": "API-Learn-Devops\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-28T05:49:20.456Z"
+              "WhenOpened": "2025-12-28T05:49:20.456Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "API-Learn-Devops\\Data\\ApplicationDbContext.cs",
@@ -164,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TodosController.cs",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Controllers\\TodosController.cs",
               "RelativeDocumentMoniker": "API-Learn-Devops\\Controllers\\TodosController.cs",
