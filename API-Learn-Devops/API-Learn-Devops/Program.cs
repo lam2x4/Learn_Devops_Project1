@@ -25,9 +25,9 @@ builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
-        b => b.WithOrigins("http://localhost:5173")
-              .AllowAnyHeader()
-              .AllowAnyMethod());
+        policy => policy.AllowAnyOrigin()  // <--- Thay ??i ? ?ây: Cho phép t?t c? các ngu?n
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
 });
 
 var app = builder.Build();
@@ -66,8 +66,7 @@ if (!disableHttps)
     app.UseHttpsRedirection();
 }
 
-app.UseCors("AllowReactApp");
-
+app.UseCors("AllowReactApp"); 
 app.UseAuthorization();
 
 app.MapControllers();
