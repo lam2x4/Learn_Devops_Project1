@@ -38,7 +38,7 @@ services:
       dockerfile: Dockerfile
       args:
         # Browser must reach host-mapped backend port
-        VITE_API_URL: http://16.176.31.252:5000/api
+        VITE_API_URL: http://3.26.31.16/:5000/api
     depends_on:
       - backend
     ports:
