@@ -7,7 +7,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
     ports:
-      - "3663:5432" # optional host access to DB
+      - "3663:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -23,26 +23,12 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:8080
-      # Override connection string for container networking
       ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=TodoApp;Username=postgres;Password=123
-      # Prevent HTTP->HTTPS redirect inside container (no certs)
       DISABLE_HTTPS_REDIRECTION: "true"
     depends_on:
       - postgres
     ports:
       - "5000:8080"
-
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-      args:
-        # Browser must reach host-mapped backend port
-        VITE_API_URL: http://3.26.31.16:5000/api
-    depends_on:
-      - backend
-    ports:
-      - "5173:80"
 
 volumes:
   pgdata:
