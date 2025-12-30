@@ -9,5 +9,13 @@ namespace API_Learn_Devops.Repositories
         Task<TodoItem> AddAsync(TodoItem todo);
         Task UpdateAsync(TodoItem todo);
         Task DeleteAsync(int id);
+
+        Task<(IEnumerable<TodoItem> Items, int TotalCount)> SearchAsync(
+            string? search,
+            string? status,
+            string? sortBy,
+            string? sortOrder,
+            int page,
+            int pageSize);
     }
 }

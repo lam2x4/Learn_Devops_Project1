@@ -45,5 +45,51 @@ namespace API_Learn_Devops.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<(IEnumerable<TodoItem> Items, int TotalCount)> SearchAsync(
+            string? search,
+            string? status,
+            string? sortBy,
+            string? sortOrder,
+            int page,
+            int pageSize)
+        {
+            var query = _context.Todos.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                var term = search.ToLower();
+                query = query.Where(t =>
+                    t.Title.ToLower().Contains(term) ||
+                    (t.Description != null && t.Description.ToLower().Contains(term)));
+            }
+
+            if (!string.IsNullOrWhiteSpace(status))
+            {
+                status = status.ToLower();
+                query = status switch
+                {
+                    "active" => query.Where(t => !t.IsCompleted),
+                    "completed" => query.Where(t => t.IsCompleted),
+                    _ => query
+                };
+            }
+
+            query = (sortBy?.ToLower(), sortOrder?.ToLower()) switch
+            {
+                ("title", "asc") => query.OrderBy(t => t.Title),
+                ("title", _) => query.OrderByDescending(t => t.Title),
+                ("createdat", "asc") => query.OrderBy(t => t.CreatedAt),
+                _ => query.OrderByDescending(t => t.CreatedAt)
+            };
+
+            var totalCount = await query.CountAsync();
+            var items = await query
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return (items, totalCount);
+        }
     }
 }

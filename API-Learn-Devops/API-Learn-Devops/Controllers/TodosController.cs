@@ -15,6 +15,13 @@ namespace API_Learn_Devops.Controllers
             _service = service;
         }
 
+        [HttpGet("search")]
+        public async Task<ActionResult<PagedResult<TodoDto>>> Search([FromQuery] TodoQuery query)
+        {
+            var result = await _service.SearchAsync(query);
+            return Ok(result);
+        }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoDto>>> GetAll()
         {

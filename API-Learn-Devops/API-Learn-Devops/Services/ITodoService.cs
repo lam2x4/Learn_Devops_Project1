@@ -9,5 +9,7 @@ namespace API_Learn_Devops.Services
         Task<TodoDto> CreateAsync(CreateTodoDto createTodoDto);
         Task<bool> UpdateAsync(int id, UpdateTodoDto updateTodoDto);
         Task<bool> DeleteAsync(int id);
+
+        Task<PagedResult<TodoDto>> SearchAsync(TodoQuery query);
     }
 }

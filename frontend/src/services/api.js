@@ -7,9 +7,11 @@ const api = axios.create({
     },
 });
 
-export const getTodos = async () => {
-    const response = await api.get('/todos');
-    return response.data;
+export const getTodos = async ({ search = '', status = 'all', sortBy = 'createdAt', sortOrder = 'desc', page = 1, pageSize = 10 } = {}) => {
+    const response = await api.get('/todos/search', {
+        params: { search, status, sortBy, sortOrder, page, pageSize },
+    });
+    return response.data; // { items, totalCount, page, pageSize, totalPages }
 };
 
 export const createTodo = async (todo) => {
