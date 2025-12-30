@@ -1,0 +1,78 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+env:
+  DOCKER_BUILDKIT: 1
+  COMPOSE_DOCKER_CLI_BUILD: 1
+
+jobs:
+  # Job 1: Build and Test Backend
+  backend-build:
+    name: Build & Test Backend
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      
+      - name: Restore dependencies
+        working-directory: ./API-Learn-Devops/API-Learn-Devops
+        run: dotnet restore
+      
+      - name: Build
+        working-directory: ./API-Learn-Devops/API-Learn-Devops
+        run: dotnet build --no-restore --configuration Release
+      
+      # Uncomment if you have tests
+      # - name: Test
+      #   working-directory: ./API-Learn-Devops/API-Learn-Devops
+      #   run: dotnet test --no-build --verbosity normal
+
+  # Job 2: Deploy Backend to EC2
+  deploy-backend:
+    name: Deploy Backend to EC2
+    needs: [backend-build]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script: |
+            cd ~/Project-Devops
+            
+            # Pull latest code
+            git pull origin main
+            
+            # Stop current containers
+            docker compose down
+            
+            # Rebuild and start backend + database
+            docker compose up --build -d
+            
+            # Clean up old images
+            docker image prune -f
+            
+            # Show running containers
+            docker compose ps
+            
+            # Show logs (last 50 lines)
+            docker compose logs --tail=50
