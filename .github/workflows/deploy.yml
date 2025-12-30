@@ -57,7 +57,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd ~/Project-Devops
+            cd ~/Learn_Devops_Project1
             
             # Pull latest code
             git pull origin main
