@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  # JOB 1: Build Image và đẩy lên Docker Hub 
+  # JOB 1: Build Image và đẩy lên Docker Hub
   build-and-push:
     runs-on: ubuntu-latest
     steps:
