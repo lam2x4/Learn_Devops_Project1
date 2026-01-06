@@ -12,5 +12,3 @@ services:
       - DISABLE_HTTPS_REDIRECTION=true
     ports:
       - "5000:8080"
-
-# Xóa bỏ phần dịch vụ postgres và volumes pgdata vì không dùng đến nữa
