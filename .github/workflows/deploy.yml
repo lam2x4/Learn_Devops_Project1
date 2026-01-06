@@ -21,7 +21,7 @@ jobs:
       - name: Build and push Backend Image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./API-Learn-Devops/API-Learn-Devops
           file: ./API-Learn-Devops/API-Learn-Devops/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/api-devops:latest
