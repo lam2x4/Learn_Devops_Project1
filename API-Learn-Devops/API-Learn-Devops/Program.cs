@@ -25,7 +25,7 @@ builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
-        policy => policy.AllowAnyOrigin()  // <--- Thay ??i ? ?‚y: Cho phÈp t?t c? c·c ngu?n
+        policy => policy.AllowAnyOrigin()  // <--- Thay ??i ? ?ÔøΩy: Cho phÔøΩp t?t c? cÔøΩc ngu?n
                         .AllowAnyHeader()
                         .AllowAnyMethod());
 });
@@ -53,5 +53,22 @@ app.UseCors("AllowReactApp");
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Auto-run migrations on startup (for production/RDS deployment)
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        context.Database.Migrate(); // This will apply pending migrations
+        Console.WriteLine("‚úÖ Database migrations applied successfully");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"‚ùå Error applying migrations: {ex.Message}");
+        // Optionally: throw; if you want to prevent app startup on migration failure
+    }
+}
 
 app.Run();
