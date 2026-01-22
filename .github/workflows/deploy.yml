@@ -31,18 +31,16 @@ jobs:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
-      # Bước 1: Copy file K8s YAML từ GitHub sang Server EC2
+      # Bước 1: Copy file K8s YAML từ repo lên EC2
       - name: Copy K8s files to EC2
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # Dùng wildcard để tìm file backend.yaml ở bất cứ đâu
-          source: "**/**/backend.yaml" 
+          # Chỉ rõ đường dẫn thực tế của backend.yaml trong repo
+          source: "./API-Learn-Devops/API-Learn-Devops/k8s/backend.yaml"
           target: "~/k8s-project"
-          # strip_components: 10 đảm bảo lấy đúng cái file, bỏ hết thư mục cha sinh ra do wildcard
-          strip_components: 10
 
       # Bước 2: SSH vào Server và chạy lệnh kubectl
       - name: Deploy to Minikube via SSH
@@ -57,7 +55,7 @@ jobs:
             
             # 2. Áp dụng cấu hình mới vào Minikube
             # Lưu ý: Đảm bảo kubectl và minikube đã được cài và alias đúng
-            kubectl apply -f deployment.yaml
+            kubectl apply -f backend.yaml
             
             # 3. Ép Kubernetes tải lại image mới nhất (QUAN TRỌNG)
             # Vì tag là :latest nên nếu không restart, K8s sẽ tưởng không có gì thay đổi
