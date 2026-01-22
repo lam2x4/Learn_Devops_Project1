@@ -38,7 +38,7 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "./API-Learn-Devops/API-Learn-Devops/k8s/backend.yaml" # ĐƯỜNG DẪN TỚI FILE K8S CỦA BẠN TRONG REPO
+          source: "API-Learn-Devops/API-Learn-Devops/k8s/backend.yaml" # ĐƯỜNG DẪN TỚI FILE K8S CỦA BẠN TRONG REPO
           target: "~/k8s-project"
 
       # Bước 2: SSH vào Server và chạy lệnh kubectl
