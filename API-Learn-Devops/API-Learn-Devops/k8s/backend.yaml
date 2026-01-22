@@ -1,0 +1,43 @@
+# 1. Deployment: Định nghĩa cách chạy Container
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        # Thay <USER> bằng DockerHub username của bạn
+        image: lamdeptrai/api-devops:latest 
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production"
+        - name: ConnectionStrings__DefaultConnection
+          value: "Host=my-first-db.cnigoik4kd0b.ap-southeast-2.rds.amazonaws.com;Port=5432;Database=TodoApp;Username=postgres;Password=kyMwyj-tumkax-4zubjy"
+---
+# 2. Service: "Cánh cửa" để truy cập vào Container
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  type: NodePort # Dùng NodePort để Minikube/EC2 mở cổng ra ngoài
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 5000      # Cổng của Service
+      targetPort: 8080 # Cổng bên trong container (.NET chạy 8080)
+      nodePort: 30001  # Bạn có thể truy cập qua IP:30001

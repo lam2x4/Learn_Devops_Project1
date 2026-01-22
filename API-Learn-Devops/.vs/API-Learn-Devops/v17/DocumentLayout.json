@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\api-learn-devops.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\api-learn-devops.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|solutionrelative:api-learn-devops\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15766215-5E6F-4BD4-90EC-F59CB71BCFEE}|API-Learn-Devops\\API-Learn-Devops.csproj|e:\\csharp-storage\\project-devops\\api-learn-devops\\api-learn-devops\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,15 +122,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "API-Learn-Devops",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj",
               "RelativeDocumentMoniker": "API-Learn-Devops\\API-Learn-Devops.csproj",
               "ToolTip": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\API-Learn-Devops.csproj",
               "RelativeToolTip": "API-Learn-Devops\\API-Learn-Devops.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-01T15:22:31.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-01T15:22:31.005Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
@@ -142,18 +145,17 @@
               "RelativeToolTip": "API-Learn-Devops\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-28T16:24:33.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-28T16:24:33.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Program.cs",
               "RelativeDocumentMoniker": "API-Learn-Devops\\Program.cs",
               "ToolTip": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Program.cs",
               "RelativeToolTip": "API-Learn-Devops\\Program.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAqwDoAAAAXAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAqwCIAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-28T05:47:54.595Z",
               "EditorCaption": ""
@@ -172,20 +174,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Dockerfile",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Dockerfile",
               "RelativeDocumentMoniker": "API-Learn-Devops\\Dockerfile",
               "ToolTip": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Dockerfile",
               "RelativeToolTip": "API-Learn-Devops\\Dockerfile",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-28T11:03:05.28Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-28T11:03:05.28Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "launchSettings.json",
               "DocumentMoniker": "E:\\CSharp-storage\\Project-Devops\\API-Learn-Devops\\API-Learn-Devops\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "API-Learn-Devops\\Properties\\launchSettings.json",
@@ -193,8 +194,7 @@
               "RelativeToolTip": "API-Learn-Devops\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAIAAAAAAAAAAAAUwBYAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-28T09:15:02.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-28T09:15:02.194Z"
             },
             {
               "$type": "Document",
@@ -218,12 +218,7 @@
               "RelativeToolTip": "API-Learn-Devops\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-28T05:49:20.456Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2025-12-28T05:49:20.456Z"
             },
             {
               "$type": "Document",

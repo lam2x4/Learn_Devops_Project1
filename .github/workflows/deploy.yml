@@ -26,29 +26,39 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/api-devops:latest
 
-  # JOB 2: Chỉ ra lệnh cho EC2 kéo Image về chạy
-  deploy:
+ # JOB 2: Thay đổi để deploy vào Minikube trên EC2
+  deploy-k8s:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to EC2 via SSH
+      # Bước 1: Copy file K8s YAML từ GitHub sang Server EC2
+      - name: Copy K8s files to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "./API-Learn-Devops/API-Learn-Devops/k8s/deployment.yaml" # ĐƯỜNG DẪN TỚI FILE K8S CỦA BẠN TRONG REPO
+          target: "~/k8s-project"
+
+      # Bước 2: SSH vào Server và chạy lệnh kubectl
+      - name: Deploy to Minikube via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # 1. Đi tới thư mục chứa file docker-compose.yml trên EC2
-            cd ~/Learn_Devops_Project1
+            # 1. Đi tới thư mục chứa file yaml vừa copy
+            cd ~/k8s-project
             
-            # 2. Login Docker (để pull image private nếu cần)
-            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+            # 2. Áp dụng cấu hình mới vào Minikube
+            # Lưu ý: Đảm bảo kubectl và minikube đã được cài và alias đúng
+            kubectl apply -f deployment.yaml
             
-            # 3. Pull image mới nhất về
-            docker compose pull backend
+            # 3. Ép Kubernetes tải lại image mới nhất (QUAN TRỌNG)
+            # Vì tag là :latest nên nếu không restart, K8s sẽ tưởng không có gì thay đổi
+            kubectl rollout restart deployment/backend-deployment
             
-            # 4. Restart hệ thống (chỉ update những gì thay đổi)
-            docker compose up -d
-            
-            # 5. Dọn dẹp image cũ
-            docker image prune -f
+            # 4. (Tùy chọn) Kiểm tra trạng thái rollout
+            kubectl rollout status deployment/backend-deployment
