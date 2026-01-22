@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using API_Learn_Devops.Enums;
 
 namespace API_Learn_Devops.Entities
 {
@@ -14,6 +15,8 @@ namespace API_Learn_Devops.Entities
         public string? Description { get; set; }
 
         public bool IsCompleted { get; set; }
+
+        public Priority Priority { get; set; } = Priority.Medium;
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }

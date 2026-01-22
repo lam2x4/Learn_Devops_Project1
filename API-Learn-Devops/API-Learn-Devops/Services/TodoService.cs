@@ -22,6 +22,7 @@ namespace API_Learn_Devops.Services
                 Title = t.Title,
                 Description = t.Description,
                 IsCompleted = t.IsCompleted,
+                Priority = t.Priority,
                 CreatedAt = t.CreatedAt
             });
         }
@@ -37,6 +38,7 @@ namespace API_Learn_Devops.Services
                 Title = todo.Title,
                 Description = todo.Description,
                 IsCompleted = todo.IsCompleted,
+                Priority = todo.Priority,
                 CreatedAt = todo.CreatedAt
             };
         }
@@ -46,7 +48,8 @@ namespace API_Learn_Devops.Services
             var todo = new TodoItem
             {
                 Title = createTodoDto.Title,
-                Description = createTodoDto.Description
+                Description = createTodoDto.Description,
+                Priority = createTodoDto.Priority
             };
 
             var createdTodo = await _repository.AddAsync(todo);
@@ -57,6 +60,7 @@ namespace API_Learn_Devops.Services
                 Title = createdTodo.Title,
                 Description = createdTodo.Description,
                 IsCompleted = createdTodo.IsCompleted,
+                Priority = createdTodo.Priority,
                 CreatedAt = createdTodo.CreatedAt
             };
         }
@@ -69,6 +73,7 @@ namespace API_Learn_Devops.Services
             todo.Title = updateTodoDto.Title;
             todo.Description = updateTodoDto.Description;
             todo.IsCompleted = updateTodoDto.IsCompleted;
+            todo.Priority = updateTodoDto.Priority;
 
             await _repository.UpdateAsync(todo);
             return true;
@@ -102,6 +107,7 @@ namespace API_Learn_Devops.Services
                 Title = t.Title,
                 Description = t.Description,
                 IsCompleted = t.IsCompleted,
+                Priority = t.Priority,
                 CreatedAt = t.CreatedAt
             });
 

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using API_Learn_Devops.Enums;
 
 namespace API_Learn_Devops.DTOs
 {
@@ -11,5 +12,7 @@ namespace API_Learn_Devops.DTOs
         public string? Description { get; set; }
 
         public bool IsCompleted { get; set; }
+
+        public Priority Priority { get; set; }
     }
 }
