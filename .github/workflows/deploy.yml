@@ -31,24 +31,44 @@ jobs:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to EC2 via SSH
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # BƯỚC MỚI: Đẩy file docker-compose.yml từ Git lên EC2
+      - name: Copy docker-compose to EC2
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "docker-compose.yml"
+          target: "~/Learn_Devops_Project1"
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          # Đưa Secret vào môi trường của Action
+          DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # 👇 Cực kỳ quan trọng: Cho phép các biến này được sử dụng trong script bên dưới
+          envs: DB_CONNECTION_STRING,DOCKERHUB_USERNAME,DOCKERHUB_TOKEN
           script: |
-            # 1. Đi tới thư mục chứa file docker-compose.yml trên EC2
             cd ~/Learn_Devops_Project1
             
-            # 2. Login Docker (để pull image private nếu cần)
-            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+            # Login Docker Hub
+            echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
             
-            # 3. Pull image mới nhất về
+            # Kéo image mới về
             docker compose pull backend
             
-            # 4. Restart hệ thống (chỉ update những gì thay đổi)
+            # Restart container. 
+            # Lúc này Docker Compose sẽ tự khớp biến ${DB_CONNECTION_STRING} với giá trị ta truyền qua envs
             docker compose up -d
             
-            # 5. Dọn dẹp image cũ
+            # Dọn dẹp
             docker image prune -f

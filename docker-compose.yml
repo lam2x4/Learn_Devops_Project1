@@ -1,14 +1,15 @@
 version: "3.9"
 services:
   backend:
-    build:
-      context: ./API-Learn-Devops/API-Learn-Devops
-      dockerfile: Dockerfile
+    # 1. Không dùng 'build', hãy dùng image đã đẩy lên Docker Hub ở Job 1
+    image: ${DOCKERHUB_USERNAME}/api-devops:latest
+    container_name: backend-api
+    restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8080
-      # Thay đổi Connection String dưới đây
-      - ConnectionStrings__DefaultConnection=Host=my-first-db.cnigoik4kd0b.ap-southeast-2.rds.amazonaws.com;Port=5432;Database=TodoApp;Username=postgres;Password=kyMwyj-tumkax-4zubjy
+      # 2. Thay chuỗi kết nối bằng biến môi trường
+      - ConnectionStrings__DefaultConnection=${DB_CONNECTION_STRING}
       - DISABLE_HTTPS_REDIRECTION=true
     ports:
       - "5000:8080"
