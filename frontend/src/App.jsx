@@ -95,7 +95,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>🚀 Task Master</h1>
+        <h1>🚀 Task Master V2</h1>
         <p>Stay organized, stay productive.</p>
       </header>
 
